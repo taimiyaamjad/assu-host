@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assu Host - Premium Minecraft Hosting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0066cc',
+                        'primary-light': '#0099ff',
+                        'dark': '#0a0a0a',
+                        'darker': '#050505',
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-dark text-white font-sans">
+    <!-- Header Section -->
+    <header class="bg-darker border-b-2 border-primary sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="text-3xl font-bold">
+                        <span class="text-primary-light">Assu</span><span>Host</span>
+                        <div class="h-1 w-12 bg-primary mt-1 rounded-full"></div>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-primary-light transition-colors duration-300">Home</a>
+                    <a href="#features" class="text-white hover:text-primary-light transition-colors duration-300">Features</a>
+                    <a href="#plans" class="text-white hover:text-primary-light transition-colors duration-300">Plans</a>
+                    <a href="#faq" class="text-white hover:text-primary-light transition-colors duration-300">FAQ</a>
+                    <a href="#contact" class="text-white hover:text-primary-light transition-colors duration-300">Contact</a>
+                </nav>
+                
+                <div class="hidden md:block">
+                    <a href="#" class="bg-primary hover:bg-primary-light text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                        Login
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-white hover:text-primary-light transition-colors duration-300">Home</a>
+                    <a href="#features" class="text-white hover:text-primary-light transition-colors duration-300">Features</a>
+                    <a href="#plans" class="text-white hover:text-primary-light transition-colors duration-300">Plans</a>
+                    <a href="#faq" class="text-white hover:text-primary-light transition-colors duration-300">FAQ</a>
+                    <a href="#contact" class="text-white hover:text-primary-light transition-colors duration-300">Contact</a>
+                    <a href="#" class="bg-primary hover:bg-primary-light text-white font-bold py-2 px-6 rounded-full transition-all duration-300 text-center">
+                        Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background with overlay -->
+        <div class="absolute inset-0 bg-[url('https://wallpapercave.com/wp/wp5961273.jpg')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60"></div>
+        
+        <!-- Animated blocks (Minecraft style) -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="cube animate-float opacity-20 w-16 h-16 bg-primary absolute top-1/4 left-1/4"></div>
+            <div class="cube animate-float opacity-20 w-24 h-24 bg-primary-light absolute top-3/4 left-3/4" style="animation-delay: 1s;"></div>
+            <div class="cube animate-float opacity-20 w-20 h-20 bg-primary absolute top-1/2 left-1/6" style="animation-delay: 2s;"></div>
+            <div class="cube animate-float opacity-20 w-12 h-12 bg-primary-light absolute top-1/3 right-1/4" style="animation-delay: 1.5s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 z-10 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+                    <span class="bg-gradient-to-r from-primary to-primary-light text-gradient">Premium</span> 
+                    <span class="text-white text-shadow">Minecraft Hosting</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300">Experience lag-free Minecraft gameplay with our high-performance servers. Instant setup, 24/7 support, and competitive pricing.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#plans" class="bg-primary hover:bg-primary-light text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg">
+                        View Plans
+                    </a>
+                    <a href="#features" class="bg-transparent border-2 border-primary text-primary-light hover:bg-primary/10 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-lg">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll down indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#features" class="text-white/70 hover:text-white transition-colors duration-300">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-gradient-to-r from-darker to-dark py-16 border-t border-b border-primary/20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="counter-item">
+                    <div class="text-4xl font-bold text-primary-light mb-2 counter" data-target="99.9">0</div>
+                    <p class="text-gray-400">Uptime Percentage</p>
+                </div>
+                <div class="counter-item">
+                    <div class="text-4xl font-bold text-primary-light mb-2 counter" data-target="10000">0</div>
+                    <p class="text-gray-400">Happy Players</p>
+                </div>
+                <div class="counter-item">
+                    <div class="text-4xl font-bold text-primary-light mb-2 counter" data-target="5000">0</div>
+                    <p class="text-gray-400">Servers Hosted</p>
+                </div>
+                <div class="counter-item">
+                    <div class="text-4xl font-bold text-primary-light mb-2 counter" data-target="24">0</div>
+                    <p class="text-gray-400">Hour Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-darker">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-primary to-primary-light text-gradient">Why Choose</span> 
+                    <span class="text-white">Assu Host?</span>
+                </h2>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-dark p-8 rounded-xl border border-primary/20 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20 group">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-all duration-300">
+                        <i class="fas fa-server text-2xl text-primary-light"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-light">High Performance</h3>
+                    <p class="text-gray-400">Our servers are equipped with high-frequency CPUs and SSD storage to ensure smooth gameplay without lag.</p>
+                </div>
+                
+                <div class="feature-card bg-dark p-8 rounded-xl border border-primary/20 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20 group">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-all duration-300">
+                        <i class="fas fa-bolt text-2xl text-primary-light"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-light">Instant Setup</h3>
+                    <p class="text-gray-400">Get your Minecraft server up and running in minutes with our automated setup process.</p>
+                </div>
+                
+                <div class="feature-card bg-dark p-8 rounded-xl border border-primary/20 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20 group">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-all duration-300">
+                        <i class="fas fa-headset text-2xl text-primary-light"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-light">24/7 Support</h3>
+                    <p class="text-gray-400">Our dedicated support team is available around the clock to assist you with any issues.</p>
+                </div>
+                
+                <div class="feature-card bg-dark p-8 rounded-xl border border-primary/20 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20 group">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-all duration-300">
+                        <i class="fas fa-shield-alt text-2xl text-primary-light"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-light">DDoS Protection</h3>
+                    <p class="text-gray-400">Advanced protection against DDoS attacks to keep your server online at all times.</p>
+                </div>
+                
+                <div class="feature-card bg-dark p-8 rounded-xl border border-primary/20 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20 group">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-all duration-300">
+                        <i class="fas fa-puzzle-piece text-2xl text-primary-light"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-light">One-Click Modpacks</h3>
+                    <p class="text-gray-400">Install popular modpacks with just one click and customize your gameplay experience.</p>
+                </div>
+                
+                <div class="feature-card bg-dark p-8 rounded-xl border border-primary/20 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20 group">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-all duration-300">
+                        <i class="fas fa-tags text-2xl text-primary-light"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-light">Affordable Plans</h3>
+                    <p class="text-gray-400">Competitive pricing with plans starting from just ₹10 for a trial period.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="py-24 bg-dark">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-primary to-primary-light text-gradient">Our Hosting</span> 
+                    <span class="text-white">Plans</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Choose the perfect plan for your Minecraft adventure. All plans include our premium features and 24/7 support.</p>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full mt-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Trial Plan -->
+                <div class="plan-card bg-darker rounded-2xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 border border-primary/20 hover:border-primary/50">
+                    <div class="p-1 bg-gradient-to-r from-primary to-primary-light">
+                        <div class="bg-darker p-6 text-center">
+                            <h3 class="text-2xl font-bold text-primary-light mb-2">TRIAL</h3>
+                            <div class="flex justify-center items-end">
+                                <span class="text-4xl font-bold">₹10</span>
+                                <span class="text-gray-400 ml-2">/ 24 hrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>2GB RAM</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>100% CPU</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>5 GB Disk Space</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>MC Server</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block w-full bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full transition-all duration-300 text-center">
+                            Try Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Stone Plan -->
+                <div class="plan-card bg-darker rounded-2xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 border border-primary/20 hover:border-primary/50">
+                    <div class="p-1 bg-gradient-to-r from-primary to-primary-light">
+                        <div class="bg-darker p-6 text-center">
+                            <h3 class="text-2xl font-bold text-primary-light mb-2">STONE PLAN</h3>
+                            <div class="flex justify-center items-end">
+                                <span class="text-4xl font-bold">₹50</span>
+                                <span class="text-gray-400 ml-2">/ month</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>2GB RAM</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>100% CPU</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>5 GB Disk Space</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>MC Server</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block w-full bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full transition-all duration-300 text-center">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Iron Plan -->
+                <div class="plan-card bg-darker rounded-2xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 border border-primary/20 hover:border-primary/50">
+                    <div class="p-1 bg-gradient-to-r from-primary to-primary-light">
+                        <div class="bg-darker p-6 text-center">
+                            <h3 class="text-2xl font-bold text-primary-light mb-2">IRON PLAN</h3>
+                            <div class="flex justify-center items-end">
+                                <span class="text-4xl font-bold">₹150</span>
+                                <span class="text-gray-400 ml-2">/ month</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>4GB RAM</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>300% CPU</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>10 GB Disk Space</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>MC Server</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block w-full bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full transition-all duration-300 text-center">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Gold Plan -->
+                <div class="plan-card bg-darker rounded-2xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 border border-primary/20 hover:border-primary/50">
+                    <div class="p-1 bg-gradient-to-r from-primary to-primary-light">
+                        <div class="bg-darker p-6 text-center">
+                            <h3 class="text-2xl font-bold text-primary-light mb-2">GOLD PLAN</h3>
+                            <div class="flex justify-center items-end">
+                                <span class="text-4xl font-bold">₹300</span>
+                                <span class="text-gray-400 ml-2">/ month</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>8GB RAM</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>400% CPU</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>15 GB Disk Space</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>MC Server</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block w-full bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full transition-all duration-300 text-center">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Diamond Plan -->
+                <div class="plan-card bg-darker rounded-2xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 border border-primary/20 hover:border-primary/50">
+                    <div class="p-1 bg-gradient-to-r from-primary to-primary-light">
+                        <div class="bg-darker p-6 text-center">
+                            <h3 class="text-2xl font-bold text-primary-light mb-2">DIAMOND PLAN</h3>
+                            <div class="flex justify-center items-end">
+                                <span class="text-4xl font-bold">₹500</span>
+                                <span class="text-gray-400 ml-2">/ month</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>12GB RAM</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>500% CPU</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>20 GB Disk Space</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>MC Server</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block w-full bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full transition-all duration-300 text-center">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Netherite Plan -->
+                <div class="plan-card bg-darker rounded-2xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 border border-primary/20 hover:border-primary/50">
+                    <div class="p-1 bg-gradient-to-r from-primary to-primary-light">
+                        <div class="bg-darker p-6 text-center">
+                            <h3 class="text-2xl font-bold text-primary-light mb-2">NETHERITE PLAN</h3>
+                            <div class="flex justify-center items-end">
+                                <span class="text-4xl font-bold">₹750</span>
+                                <span class="text-gray-400 ml-2">/ month</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>16GB RAM</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>750% CPU</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>30 GB Disk Space</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary-light mr-3"></i>
+                                <span>MC Server</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block w-full bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full transition-all duration-300 text-center">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-darker">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-primary to-primary-light text-gradient">Frequently Asked</span> 
+                    <span class="text-white">Questions</span>
+                </h2>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-dark rounded-xl overflow-hidden border border-primary/20">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                            <span class="text-xl font-semibold">How do I get started with Assu Host?</span>
+                            <i class="fas fa-chevron-down text-primary-light transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 hidden">
+                            <p class="text-gray-400">Getting started is easy! Simply choose a plan that suits your needs, complete the checkout process, and your Minecraft server will be set up instantly. You'll receive login details to your server control panel where you can manage your server, install mods, and invite players.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-dark rounded-xl overflow-hidden border border-primary/20">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                            <span class="text-xl font-semibold">Can I upgrade my plan later?</span>
+                            <i class="fas fa-chevron-down text-primary-light transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 hidden">
+                            <p class="text-gray-400">Yes, you can upgrade your plan at any time! Your server data will be automatically transferred to your new plan with minimal downtime. Simply go to your account dashboard and select the upgrade option.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-dark rounded-xl overflow-hidden border border-primary/20">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                            <span class="text-xl font-semibold">What payment methods do you accept?</span>
+                            <i class="fas fa-chevron-down text-primary-light transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 hidden">
+                            <p class="text-gray-400">We accept various payment methods including credit/debit cards, UPI, net banking, and popular digital wallets. All payments are processed securely through our payment gateway.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item bg-dark rounded-xl overflow-hidden border border-primary/20">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                            <span class="text-xl font-semibold">Can I install custom mods and plugins?</span>
+                            <i class="fas fa-chevron-down text-primary-light transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 hidden">
+                            <p class="text-gray-400">All our plans support custom mods and plugins. You have full FTP access to your server files, allowing you to install any compatible mods or plugins you want. We also offer one-click installations for popular modpacks.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item bg-dark rounded-xl overflow-hidden border border-primary/20">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                            <span class="text-xl font-semibold">How many players can join my server?</span>
+                            <i class="fas fa-chevron-down text-primary-light transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 hidden">
+                            <p class="text-gray-400">The number of players your server can handle depends on the plan you choose. Higher-tier plans with more RAM and CPU can accommodate more players. As a general guideline, each GB of RAM can support approximately 10-20 players, depending on the mods and plugins installed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-24 bg-dark relative overflow-hidden">
+        <!-- Background with overlay -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1619197279535-e123c5fd5da1?q=80&w=1471&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-dark to-dark/80"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-primary to-primary-light text-gradient">Ready to Start Your</span> 
+                    <span class="text-white">Minecraft Adventure?</span>
+                </h2>
+                <p class="text-xl text-gray-300 mb-8">Join thousands of satisfied players who trust Assu Host for their Minecraft server needs. Get started today with our 24-hour trial!</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#plans" class="bg-primary hover:bg-primary-light text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg">
+                        Get Started Now
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-primary text-primary-light hover:bg-primary/10 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-lg">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-darker">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-primary to-primary-light text-gradient">Get in</span> 
+                    <span class="text-white">Touch</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Have questions or need assistance? Our support team is here to help you 24/7.</p>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full mt-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div class="bg-dark p-8 rounded-xl border border-primary/20">
+                    <h3 class="text-2xl font-bold mb-6 text-primary-light">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-primary-light"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-1">Email</h4>
+                                <p class="text-gray-400">support@assuhost.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-headset text-primary-light"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-1">Live Chat</h4>
+                                <p class="text-gray-400">Available 24/7 on our website</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-discord text-primary-light"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-1">Discord</h4>
+                                <p class="text-gray-400">Join our community: discord.gg/assuhost</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-dark p-8 rounded-xl border border-primary/20">
+                    <h3 class="text-2xl font-bold mb-6 text-primary-light">Send a Message</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-400 mb-2">Name</label>
+                            <input type="text" id="name" class="w-full bg-darker border border-primary/20 rounded-lg p-3 text-white focus:outline-none focus:border-primary transition-colors duration-300">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-400 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full bg-darker border border-primary/20 rounded-lg p-3 text-white focus:outline-none focus:border-primary transition-colors duration-300">
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-400 mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full bg-darker border border-primary/20 rounded-lg p-3 text-white focus:outline-none focus:border-primary transition-colors duration-300">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-400 mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full bg-darker border border-primary/20 rounded-lg p-3 text-white focus:outline-none focus:border-primary transition-colors duration-300"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker pt-16 pb-8 border-t border-primary/20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="text-3xl font-bold mb-6">
+                        <span class="text-primary-light">Assu</span><span class="text-white">Host</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Premium Minecraft server hosting with high performance, reliability, and 24/7 support.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary-light hover:bg-primary/30 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary-light hover:bg-primary/30 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary-light hover:bg-primary/30 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary-light hover:bg-primary/30 transition-colors duration-300">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Home</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Features</a></li>
+                        <li><a href="#plans" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Plans</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-primary-light transition-colors duration-300">FAQ</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white">Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Knowledge Base</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Server Status</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Tutorials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white">Legal</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Refund Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition-colors duration-300">Acceptable Use Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition-colors duration-300">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-primary/10 pt-8 text-center">
+                <p class="text-gray-500">&copy; 2025 Assu Host. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuToggle.innerHTML = mobileMenu.classList.contains('hidden') 
+                ? '<i class="fas fa-bars text-2xl"></i>' 
+                : '<i class="fas fa-times text-2xl"></i>';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuToggle.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+                    }
+                }
+            });
+        });
+        
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle current FAQ
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+                
+                // Close other FAQs
+                faqQuestions.forEach(otherQuestion => {
+                    if (otherQuestion !== question) {
+                        const otherAnswer = otherQuestion.nextElementSibling;
+                        const otherIcon = otherQuestion.querySelector('i');
+                        
+                        otherAnswer.classList.add('hidden');
+                        otherIcon.classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+        
+        // Animated counters
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the faster
+        
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.dataset.target;
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        };
+        
+        // Start counter animation when in viewport
+        const counterSection = document.querySelector('.counter-item').parentElement.parentElement;
+        
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateCounters();
+                observer.unobserve(counterSection);
+            }
+        });
+        
+        observer.observe(counterSection);
+    </script>
+</body>
+</html>
